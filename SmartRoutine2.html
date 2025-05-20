@@ -128,11 +128,11 @@
 </body>
 <script>
         // initialize up attributes and misc.
-        const daysMap = ["sun","mon","tue","wed","thu","fri","sat"];
+        const daysMap = ["sun","mon","tue","wed","thu","fri","sat"]; // days are mapped
         let dateO = new Date();
-        console.log('helo');
-        const Today = daysMap[dateO.getDay()];
-        console.log(Today);
+        console.log('hello!'); // Js compatibility test
+        const Today = daysMap[dateO.getDay()]; //get what day is today
+        console.log(Today); // correction test
         function initial()
         {
             
@@ -142,14 +142,14 @@
         // write down modular functions
         function applyCss(these)
         {
-            these.style.backgroundColor = 'rgb(74, 104, 205)';
+            these.style.backgroundColor = 'rgb(74, 104, 205)'; // pick whatever you prefer here :)
         }
 
         function triggerHighlights(Day)
         {   console.log("cases")
-            var selected = document.getElementsByClassName(Day);
+            var selected = document.getElementsByClassName(Day); // select all which has the className
             for (var i = 0; i < selected.length; i++) {
-                applyCss(selected[i]);
+                applyCss(selected[i]); // apply the css
             }
         
         }
