@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--SRY, only desktop responsive-->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-POWAH-ED ROUTINE</title>
+    <style>
+        /* common rule-sets */
+        :root
+        {
+            --bgClr : rgb(59, 106, 206);
+        }
+        *
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        table
+        {
+            background-color: var(--bgClr);
+            color: white;
+            border-radius: 5px;
+            margin: 1%;
+            width: 96%;
+            height: fit-content;
+            border: solid var(--bgClr) 1px;
+            border-collapse: collapse;
+            font-size: 35px;
+            text-align: center;
+            
+        }
+        table::before /*acts like an anti-textSelection shield*/
+        {
+            align-self: center;
+            position: absolute;
+            left: 2.4%;
+            content: '__';
+            color: transparent;
+            z-index: 1;
+            width: calc(93%);
+            height: calc(89% - 1px);
+            background-color: rgba(255, 0, 0, 0);
+            border: solid var(--bgClr) 2px;
+            box-shadow: 0 0 2px var(--bgClr) inset, 0 0 2px var(--bgClr);
+        }
+        th, td
+        {
+            padding: 25px;
+            width: fit-content;
+            border: solid white 1px;
+            border-collapse: collapse;
+        }
+        th:hover
+        {
+            color: red
+        }
+        .frame
+        {
+            width: initial;
+            background-color: var(--bgClr);
+            padding: 0.5%;
+            margin: 1%;
+            border-radius: 7px;
+            box-shadow: 0 0 10px rgb(99, 98, 98);
+        }
+
+        /* specific rule-sets */
+        .top_sadow
+        {
+            border-bottom: none;
+        }
+        .sadow
+        {
+            color: var(--bgClr);
+            border-top:none;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div id="log"></div>
+    <div class="frame">
+    <table id="main_table">
+        <tr>
+            <!--I DONT CARE A {0010 0011 0110 1010} ABOUT SATURDAY CLASSES-->
+            <th class="sun">SUN</th>
+            <th class="mon">MON</th>
+            <th class="tue">TUE</th>
+            <th class="wed">WED</th>
+            <th class="thu">THR</th>
+        </tr>
+        <tr>
+            <td colspan="5" class="sun mon tue wed thu">ENGLISH</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="sun mon tue wed thu">MATHEMATICS</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="sun mon">BANGLA - 1</td>
+            <td colspan="3" class="tue wed thu">BANGLA - 2</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="top_sadow">TIFFIN</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="sadow">TIFFIN//</td>
+            <td class="tue">HINDU</td>
+            <td colspan="2" class="sadow">TIFFIN//</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="sun mon tue">ISLAM</td>
+            <td colspan="2" class="wed thu">ICT</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="sun mon">AGRICULTURE</td>
+            <td colspan="3" class="tue wed thu">SCIENCE</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="sun mon">SCIENCE</td>
+            <td colspan="3" class="tue wed thu">SOCIAL SCIENCE</td>
+        </tr>
+    </table>
+    </div>
+</body>
+<script>
+        // initialize up attributes and misc.
+        const daysMap = ["sun","mon","tue","wed","thu","fri","sat"];
+        let dateO = new Date();
+        console.log('helo');
+        const Today = daysMap[dateO.getDay()];
+        console.log(Today);
+        function initial()
+        {
+            
+        }
+        initial();
+
+        // write down modular functions
+        function applyCss(these)
+        {
+            these.style.backgroundColor = 'rgb(74, 104, 205)';
+        }
+
+        function triggerHighlights(Day)
+        {   console.log("cases")
+            switch(Day)
+            {
+                case 'sun':
+                    console.log('sun');
+                    var selected = document.getElementsByClassName('sun');
+                    for (var i = 0; i < selected.length; i++) {
+                        applyCss(selected[i]);
+
+                    }
+                    break;
+
+                case 'mon':
+                    console.log('mon');
+                    var selected = document.getElementsByClassName('mon');
+                    for (var i = 0; i < selected.length; i++) {
+                        applyCss(selected[i]);
+
+                    }
+                    break;
+
+                case 'tue':
+                    console.log('tue');
+                    var selected = document.getElementsByClassName('tue');
+                    for (var i = 0; i < selected.length; i++) {
+                        applyCss(selected[i]);
+
+                    }
+                    break;
+
+                case 'wed':
+                    console.log('wed');
+                    var selected = document.getElementsByClassName('wed');
+                    for (var i = 0; i < selected.length; i++) {
+                        applyCss(selected[i]);
+
+                    }
+                    break;
+
+                case 'thu':
+                    console.log('thu');
+                    var selected = document.getElementsByClassName('thu');
+                    for (var i = 0; i < selected.length; i++) {
+                        applyCss(selected[i]);
+
+                    }
+                    break;
+            }
+       
+        
+        }
+        triggerHighlights(Today);
+
+
+
+
+    </script>
+</html>
