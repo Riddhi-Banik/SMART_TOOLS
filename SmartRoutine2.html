@@ -147,54 +147,10 @@
 
         function triggerHighlights(Day)
         {   console.log("cases")
-            switch(Day)
-            {
-                case 'sun':
-                    console.log('sun');
-                    var selected = document.getElementsByClassName('sun');
-                    for (var i = 0; i < selected.length; i++) {
-                        applyCss(selected[i]);
-
-                    }
-                    break;
-
-                case 'mon':
-                    console.log('mon');
-                    var selected = document.getElementsByClassName('mon');
-                    for (var i = 0; i < selected.length; i++) {
-                        applyCss(selected[i]);
-
-                    }
-                    break;
-
-                case 'tue':
-                    console.log('tue');
-                    var selected = document.getElementsByClassName('tue');
-                    for (var i = 0; i < selected.length; i++) {
-                        applyCss(selected[i]);
-
-                    }
-                    break;
-
-                case 'wed':
-                    console.log('wed');
-                    var selected = document.getElementsByClassName('wed');
-                    for (var i = 0; i < selected.length; i++) {
-                        applyCss(selected[i]);
-
-                    }
-                    break;
-
-                case 'thu':
-                    console.log('thu');
-                    var selected = document.getElementsByClassName('thu');
-                    for (var i = 0; i < selected.length; i++) {
-                        applyCss(selected[i]);
-
-                    }
-                    break;
+            var selected = document.getElementsByClassName(Day);
+            for (var i = 0; i < selected.length; i++) {
+                applyCss(selected[i]);
             }
-       
         
         }
         triggerHighlights(Today);
