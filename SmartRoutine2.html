@@ -32,23 +32,10 @@
             text-align: center;
             
         }
-        table::before /*acts like an anti-textSelection shield*/
-        {
-            align-self: center;
-            position: absolute;
-            left: 2.4%;
-            content: '__';
-            color: transparent;
-            z-index: 1;
-            width: calc(93%);
-            height: calc(89% - 1px);
-            background-color: rgba(255, 0, 0, 0);
-            border: solid var(--bgClr) 2px;
-            box-shadow: 0 0 2px var(--bgClr) inset, 0 0 2px var(--bgClr);
-        }
+
         th, td
         {
-            padding: 25px;
+            padding: 24px;
             width: fit-content;
             border: solid white 1px;
             border-collapse: collapse;
@@ -59,12 +46,26 @@
         }
         .frame
         {
-            width: initial;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 80px);
             background-color: var(--bgClr);
-            padding: 0.5%;
-            margin: 1%;
+            padding: 20px;
+            margin: 20px;
             border-radius: 7px;
             box-shadow: 0 0 10px rgb(99, 98, 98);
+        }
+        .frame::before /* new anti-scratch shield */
+        {
+            content: '--';
+            background-color: rgba(255, 0, 0, 0);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
         }
 
         /* specific rule-sets */
@@ -77,6 +78,20 @@
             color: var(--bgClr);
             border-top:none;
         }
+        @media (max-width: 1200px) and (min-width:790px)
+        {table{font-size: 23px;} th, td{padding: 21px;}}
+
+        @media (max-width: 790px) and (min-width:650px)
+        {table{font-size: 25px;} th, td{padding: 20px;}}
+
+        @media (max-width: 650px) and (min-width:550px)
+        {table{font-size: 20px;} th, td{padding: 15px;}}
+
+        @media (max-width: 550px) and (min-width:450px)
+        {table{font-size: 15px;} th, td{padding: 15px;}}
+
+        @media (max-width: 450px) and (min-width:320px)
+        {table{font-size: 10px;} th, td{padding: 12px;}}
 
     </style>
     
@@ -86,7 +101,7 @@
     <div class="frame">
     <table id="main_table">
         <tr>
-            <!--I DONT CARE A {0010 0011 0110 1010} ABOUT SATURDAY CLASSES-->
+            <th class="sat">SAT</th>
             <th class="sun">SUN</th>
             <th class="mon">MON</th>
             <th class="tue">TUE</th>
@@ -94,33 +109,33 @@
             <th class="thu">THR</th>
         </tr>
         <tr>
-            <td colspan="5" class="sun mon tue wed thu">ENGLISH</td>
+            <td colspan="6" class="sat sun mon tue wed thu">ENGLISH</td>
         </tr>
         <tr>
-            <td colspan="5" class="sun mon tue wed thu">MATHEMATICS</td>
+            <td colspan="6" class="sun mon tue wed thu">MATHEMATICS</td>
         </tr>
         <tr>
-            <td colspan="2" class="sun mon">BANGLA - 1</td>
+            <td colspan="3" class="sun mon">BANGLA - 1</td>
             <td colspan="3" class="tue wed thu">BANGLA - 2</td>
         </tr>
         <tr>
-            <td colspan="5" class="top_sadow">TIFFIN</td>
+            <td colspan="6" class="top_sadow">TIFFIN</td>
         </tr>
         <tr>
-            <td colspan="2" class="sadow">TIFFIN//</td>
+            <td colspan="3" class="sadow">TIFFIN//</td>
             <td class="tue">HINDU</td>
             <td colspan="2" class="sadow">TIFFIN//</td>
         </tr>
         <tr>
-            <td colspan="3" class="sun mon tue">ISLAM</td>
+            <td colspan="4" class="sun mon tue">ISLAM</td>
             <td colspan="2" class="wed thu">ICT</td>
         </tr>
         <tr>
-            <td colspan="2" class="sun mon">AGRICULTURE</td>
+            <td colspan="3" class="sun mon">AGRICULTURE</td>
             <td colspan="3" class="tue wed thu">SCIENCE</td>
         </tr>
         <tr>
-            <td colspan="2" class="sun mon">SCIENCE</td>
+            <td colspan="4" class="sun mon">SCIENCE</td>
             <td colspan="3" class="tue wed thu">SOCIAL SCIENCE</td>
         </tr>
     </table>
@@ -142,7 +157,7 @@
         // write down modular functions
         function applyCss(these)
         {
-            these.style.backgroundColor = 'rgb(74, 104, 205)'; // pick whatever you prefer here :)
+            these.style.backgroundColor = 'rgb(74, 104, 175)'; // pick whatever you prefer here :)
         }
 
         function triggerHighlights(Day)
